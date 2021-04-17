@@ -12,8 +12,8 @@ import java.util.List;
 public class Tests extends BaseTest{
 
 
-    String username = ""; //bot username
-    String password = ""; //bot passord
+    String username = "79267612747";
+    String password = "ksdjfnjsdfnksdlf23r423n";
 
     String groupHREF = null;
 
