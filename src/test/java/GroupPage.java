@@ -13,6 +13,11 @@ public class GroupPage {
 
     WebDriver driver;
 
+    String[] subGroups = {"massmedia", "automoto", "blogs", "family", "design",
+                          "animals", "cookery", "games", "cinema", "fashion",
+                          "sport", "travel", "education", "computer", "music",
+                          "entertainment", "hobby", "art", "charity", "science", "philosophy"};
+
     String GROUPCARD_XPATH = ".//div[contains(@data-l,\"groupId\")]";
     String AUTO_XPATH = ".//a[contains(@data-l,\"t,automoto\")]";
     String MYGROUPS_PATH = ".//a[text()='Мои группы']";
@@ -22,14 +27,21 @@ public class GroupPage {
 
     GroupPage(WebDriver driver){
         this.driver = driver;
+        check();
     }
 
+    void check(){
 
-    public void selectCategory(){
-        driver.findElement(By.xpath(AUTO_XPATH)).click();
+    }
+
+    public void selectCategory(String category){
+        String xpath = ".//a[contains(@data-l,'t," + category + "')]";
+        String url = "https://ok.ru/groups/" + category;
+
+        driver.findElement(By.xpath(xpath)).click();
 
         (new WebDriverWait(driver, 10))
-                .until(ExpectedConditions.urlToBe(AUTOMOTO_URL));
+                .until(ExpectedConditions.urlToBe(url));
     }
 
     public List<CardElement> getGroupsList(){

@@ -16,6 +16,7 @@ public class Tests extends BaseTest{
     String password = "ksdjfnjsdfnksdlf23r423n";
 
     String groupHREF = null;
+    String subGroup = "automoto";
 
     List<CardElement> groupList;
 
@@ -26,7 +27,7 @@ public class Tests extends BaseTest{
         UserPage userPage = new LoginPage(this.driver).logIn(username, password);
         GroupPage group = userPage.moveToGroups();
 
-        group.selectCategory(); //need to wait
+        group.selectCategory(subGroup); //need to wait
 
 
 
@@ -59,10 +60,4 @@ public class Tests extends BaseTest{
             e.printStackTrace();
         }
     }
-
-    @After
-    public void close(){
-        this.driverExit();
-    }
-
 }

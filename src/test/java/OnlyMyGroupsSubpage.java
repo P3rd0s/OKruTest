@@ -8,8 +8,7 @@ public class OnlyMyGroupsSubpage {
     }
 
     public boolean findGroupByHref(String href){
-        String START_XPATH = ".//a[@href=\"";
-        START_XPATH += (href + "\"]");
+        String START_XPATH = ".//a[@href=\"" + href + "\"]";
 
         return ExistChecker.checkExist(myGroupsSubpage, START_XPATH);
     }

@@ -22,9 +22,9 @@ public class CardElement {
     }
 
     public String addGroup(){
-        if(ExistChecker.checkExist(card, ADDGROUP_XPATH)){
-            card.findElement(By.xpath(ADDGROUP_XPATH)).click();
-        }
+        //user should not be in group
+        card.findElement(By.xpath(ADDGROUP_XPATH)).click();
+
         String groupHREF = card.findElement(By.xpath(GROUPNAME_XPATH)).getAttribute("href");
         return groupHREF.substring(groupHREF.lastIndexOf('/'));
     }
