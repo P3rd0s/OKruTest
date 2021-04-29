@@ -13,7 +13,7 @@ public class Tests extends BaseTest{
 
 
     String username = "79267612747";
-    String password = "ksdjfnjsdfnksdlf23r423n";
+    String password = "";
 
     String groupHREF = null;
     String subGroup = "automoto";
